@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>
+                    {"timestamp":"%d{UNIX_MILLIS}","level":"%p","appName":"%mdc{AppName}","message":"%enc{%m}{JSON}","logOrigin":"%c","exception":"%enc{%throwable}{JSON}"}%n
+                </Pattern>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <AsyncRoot level="info" additivity="false">
+            <AppenderRef ref="console"/>
+        </AsyncRoot>
+    </Loggers>
+</Configuration>
